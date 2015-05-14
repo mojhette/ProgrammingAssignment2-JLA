@@ -19,7 +19,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 # set the value of inverse matrix
 
-  setinvmat <- function(m) m <<- invmat
+  setinvmat <- function(invmat) m <<- invmat
 
 # get the value of inverse matrix
 
@@ -50,7 +50,29 @@ cacheSolve <- function(x, ...) {
 }
 
 # test with
-# x  <- matrix(1:9, 3, 3)
-# makeCacheMatrix(x)
+# > x  <- matrix(1:4, 2, 2)
+# > x
+# [,1] [,2]
+# [1,]    1    3
+# [2,]    2    4
+#
+# z <- makeCacheMatrix(x)
+# > z$get()
+# [,1] [,2]
+# [1,]    1    3
+# [2,]    2    4
+#
+# > cacheSolve(z)
+# [,1] [,2]
+# [1,]   -2  1.5
+# [2,]    1 -0.5
+#
+# > cacheSolve(z)
+# getting cached data.
+# [,1] [,2]
+# [1,]   -2  1.5
+# [2,]    1 -0.5
+
+
 
 
